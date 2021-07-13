@@ -23,3 +23,36 @@ data = data[-c(5),]
 data = data[-c(5:10),]
 
 data = data[,colSums(is.na(data)) == 0]
+
+# July 13
+# Import data
+data = read.csv("~/Downloads/breast_cancer_subset.csv")
+head(data)
+subset_data = data
+
+# Compute summary stats
+summary(subset_data)
+
+# Correlation values 
+cor(subset_data[,3:7])
+
+# Check mean of a given column
+mean(subset_data$radius)
+
+# Check SD of a given column
+sd(subset_data$radius)
+
+# Check min and max of a given column
+min(subset_data$radius)
+max(subset_data$radius)
+
+# Mean of every (numeric) column
+sapply(subset_data[,3:7], mean)
+# also
+colMeans(subset_data[,3:7])
+
+# Count number of elements in a specific column
+length(subset_data$radius)
+
+# Calculate sum of the values in a given column
+sum(subset_data$radius)
